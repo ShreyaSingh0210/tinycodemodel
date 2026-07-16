@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Build with AI 2025 | Retro-Futuristic Developer Summit</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+                        sans: ['"Inter"', 'system-ui', 'sans-serif'],
+                    },
+                    colors: {
+                        vintage: {
+                            cream: '#F9F6F0',   /* Warm, rich vintage background */
+                            paper: '#F3EFE0',   /* Slightly darker cream/paper */
+                            gold: '#C5A880',    /* Muted, antique gold accent */
+                            rose: '#A37072',    /* Dusty, melancholic rose */
+                            ink: '#1C1A17',     /* Deep charcoal/black */
+                            sepia: '#4A3E3D',   /* Warm dark brown for subtle text */
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts: Cormorant Garamond (Serif) & Inter (Sans) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F9F6F0;
+        }
+        /* Soft vignettes, grain overlays, and elegant animations to give that Lana Del Rey cinematic feeling */
+        .vignette {
+            box-shadow: inset 0 0 120px rgba(28, 26, 23, 0.08);
+        }
+        .grain-overlay {
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.015'/%3E%3C/svg%3E");
+        }
+        .gold-border-gradient {
+            border-image: linear-gradient(to right, #C5A880, #EAD7C3, #C5A880) 1;
+        }
+    </style>
+</head>
+<body class="text-vintage-ink bg-vintage-cream min-h-screen flex flex-col relative grain-overlay selection:bg-vintage-gold/30 selection:text-vintage-ink overflow-x-hidden">
+
+    <!-- Header Navigation -->
+    <header class="sticky top-0 z-50 backdrop-blur-md bg-vintage-cream/80 border-b border-vintage-gold/20">
+        <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="#" class="flex flex-col group">
+                <span class="font-serif italic text-2xl tracking-wide text-vintage-ink group-hover:text-vintage-rose transition-colors duration-300">
+                    Build with AI
+                </span>
+                <span class="text-[10px] uppercase tracking-[0.3em] text-vintage-rose font-medium -mt-1">
+                    Winter Session 2025
+                </span>
+            </a>
+
+            <nav class="hidden md:flex items-center space-x-10 text-xs uppercase tracking-[0.2em] font-medium text-vintage-sepia">
+                <a href="#about" class="hover:text-vintage-rose transition-colors duration-300">The Vision</a>
+                <a href="#details" class="hover:text-vintage-rose transition-colors duration-300">The Gathering</a>
+                <a href="#schedule" class="hover:text-vintage-rose transition-colors duration-300">The Hours</a>
+            </nav>
+
+            <div class="flex items-center">
+                <a href="https://forms.gle/demo-link-or-mailto" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-5 py-2.5 text-xs uppercase tracking-[0.15em] font-medium text-white bg-vintage-ink hover:bg-vintage-rose transition-colors duration-500 border border-transparent">
+                    Register Now
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section (Melancholic, Cinematic, Vintage Glamour) -->
+    <section id="about" class="relative overflow-hidden pt-24 pb-20 md:pt-36 md:pb-32 border-b border-vintage-gold/20">
+        <!-- Ambient Decorative Oval -->
+        <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-vintage-gold/5 rounded-full filter blur-[100px] pointer-events-none"></div>
+
+        <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
+            <!-- Decorative Rose Line -->
+            <div class="flex items-center justify-center space-x-4 mb-8">
+                <div class="h-[1px] w-12 bg-vintage-gold/45"></div>
+                <span class="font-serif italic text-vintage-rose text-lg tracking-wider">A Retro-Futuristic Reverie</span>
+                <div class="h-[1px] w-12 bg-vintage-gold/45"></div>
+            </div>
+
+            <!-- Cinematic Title -->
+            <h1 class="font-serif text-5xl sm:text-7xl lg:text-8xl font-light tracking-tight text-vintage-ink mb-8 leading-[0.95]">
+                Build with AI <br>
+                <span class="italic font-normal text-vintage-rose">2025</span>
+            </h1>
+
+            <!-- Beautiful Muted Subtitle -->
+            <p class="font-serif text-xl sm:text-2xl md:text-3xl text-vintage-sepia italic font-light leading-relaxed max-w-3xl mx-auto mb-12">
+                "Where the warm nostalgia of yesteryear meets the cold, breathtaking intelligence of tomorrow. Join us under the golden winter sky for a day of code, creation, and classic romance."
+            </p>
+
+            <!-- Metadata Pills in Vintage Row -->
+            <div class="flex flex-wrap items-center justify-center gap-6 text-xs uppercase tracking-[0.2em] text-vintage-sepia font-medium mb-14">
+                <span class="flex items-center">
+                    <span class="w-1.5 h-1.5 bg-vintage-rose rounded-full mr-2.5"></span>
+                    Nov 15, 2025
+                </span>
+                <span class="hidden sm:inline text-vintage-gold/40">|</span>
+                <span class="flex items-center">
+                    <span class="w-1.5 h-1.5 bg-vintage-rose rounded-full mr-2.5"></span>
+                    NYC & Worldwide
+                </span>
+                <span class="hidden sm:inline text-vintage-gold/40">|</span>
+                <span class="flex items-center">
+                    <span class="w-1.5 h-1.5 bg-vintage-rose rounded-full mr-2.5"></span>
+                    Autumn-Winter Edition
+                </span>
+            </div>
+
+            <!-- Elegantly Rounded CTAs -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-5">
+                <a href="https://forms.gle/demo-link-or-mailto" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center px-10 py-5 text-xs uppercase tracking-[0.2em] font-medium text-white bg-vintage-ink hover:bg-vintage-rose transition-all duration-500 shadow-md">
+                    Secure Your Invitation
+                    <svg class="w-4 h-4 ml-3 -mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                    </svg>
+                </a>
+                <a href="#details" class="w-full sm:w-auto inline-flex items-center justify-center px-10 py-5 text-xs uppercase tracking-[0.2em] font-medium text-vintage-ink bg-transparent border border-vintage-gold/60 hover:border-vintage-ink transition-all duration-500">
+                    Read the Details
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Details Section (Vintage Cards) -->
+    <section id="details" class="py-20 md:py-28 bg-vintage-paper border-b border-vintage-gold/20 relative">
+        <div class="max-w-6xl mx-auto px-6">
+
+            <div class="text-center mb-16">
+                <span class="text-xs uppercase tracking-[0.3em] text-vintage-rose font-medium">The Setting</span>
+                <h2 class="font-serif text-3xl sm:text-5xl italic text-vintage-ink mt-2">Time, Date, & Atmosphere</h2>
+                <div class="w-16 h-[1px] bg-vintage-gold/60 mx-auto mt-4"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <!-- Date Card -->
+                <div class="bg-vintage-cream p-8 md:p-10 border border-vintage-gold/30 hover:border-vintage-rose transition-all duration-500 flex flex-col justify-between">
+                    <div>
+                        <div class="font-serif italic text-4xl text-vintage-gold mb-6">01.</div>
+                        <span class="text-xs uppercase tracking-[0.25em] text-vintage-rose font-medium block mb-2">The Golden Date</span>
+                        <h3 class="font-serif text-2xl text-vintage-ink font-normal leading-snug">Saturday, November 15, 2025</h3>
+                    </div>
+                    <p class="text-sm text-vintage-sepia/80 mt-6 leading-relaxed">
+                        As the autumn leaves drift slowly to the pavement, join us for a full day of technological magic and retro elegance.
+                    </p>
+                </div>
+
+                <!-- Time Card -->
+                <div class="bg-vintage-cream p-8 md:p-10 border border-vintage-gold/30 hover:border-vintage-rose transition-all duration-500 flex flex-col justify-between">
+                    <div>
+                        <div class="font-serif italic text-4xl text-vintage-gold mb-6">02.</div>
+                        <span class="text-xs uppercase tracking-[0.25em] text-vintage-rose font-medium block mb-2">The Hours</span>
+                        <h3 class="font-serif text-2xl text-vintage-ink font-normal leading-snug">9:00 AM – 6:00 PM EST</h3>
+                    </div>
+                    <p class="text-sm text-vintage-sepia/80 mt-6 leading-relaxed">
+                        From dawn keynotes to twilight cocktails. A masterfully crafted timeline designed to spark both technical brilliance and quiet wonder.
+                    </p>
+                </div>
+
+                <!-- Location Card -->
+                <div class="bg-vintage-cream p-8 md:p-10 border border-vintage-gold/30 hover:border-vintage-rose transition-all duration-500 flex flex-col justify-between">
+                    <div>
+                        <div class="font-serif italic text-4xl text-vintage-gold mb-6">03.</div>
+                        <span class="text-xs uppercase tracking-[0.25em] text-vintage-rose font-medium block mb-2">The Destination</span>
+                        <h3 class="font-serif text-2xl text-vintage-ink font-normal leading-snug">The Grand Palace & Stream</h3>
+                    </div>
+                    <p class="text-sm text-vintage-sepia/80 mt-6 leading-relaxed">
+                        Located at the breathtaking historical Innovation Palace in NYC. Broadcasted live around the globe in nostalgic high-fidelity.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Schedule/Highlights (Serif & Elegant Timeline) -->
+    <section id="schedule" class="py-20 md:py-28 bg-vintage-cream border-b border-vintage-gold/20">
+        <div class="max-w-4xl mx-auto px-6">
+
+            <div class="text-center mb-16">
+                <span class="text-xs uppercase tracking-[0.3em] text-vintage-rose font-medium">The Itinerary</span>
+                <h2 class="font-serif text-3xl sm:text-5xl italic text-vintage-ink mt-2">Hours of the Muse</h2>
+                <div class="w-16 h-[1px] bg-vintage-gold/60 mx-auto mt-4"></div>
+            </div>
+
+            <!-- Timeline -->
+            <div class="relative pl-6 md:pl-10 border-l border-vintage-gold/30 space-y-12 md:space-y-16">
+
+                <!-- Dot overlay style -->
+                <div class="absolute left-0 top-0 h-full w-[1px] bg-vintage-gold/30"></div>
+
+                <!-- Schedule Item 1 -->
+                <div class="relative group">
+                    <!-- Dot marker -->
+                    <div class="absolute -left-[31px] md:-left-[47px] top-1 w-4 h-4 rounded-full bg-vintage-cream border-2 border-vintage-rose group-hover:bg-vintage-rose transition-colors duration-300"></div>
+
+                    <span class="font-serif italic text-lg text-vintage-gold block mb-2">09:00 AM — Morning Dew Keynote</span>
+                    <h4 class="font-serif text-2xl md:text-3xl text-vintage-ink font-light leading-snug">
+                        The Melancholy and Magnificence of Artificial Minds
+                    </h4>
+                    <p class="text-sm text-vintage-sepia/80 mt-2 leading-relaxed max-w-2xl">
+                        An exploration of how modern models capture humanity's soft nuances, and the nostalgic road that brought us to 2025.
+                    </p>
+                </div>
+
+                <!-- Schedule Item 2 -->
+                <div class="relative group">
+                    <!-- Dot marker -->
+                    <div class="absolute -left-[31px] md:-left-[47px] top-1 w-4 h-4 rounded-full bg-vintage-cream border-2 border-vintage-rose group-hover:bg-vintage-rose transition-colors duration-300"></div>
+
+                    <span class="font-serif italic text-lg text-vintage-gold block mb-2">11:00 AM — Technical Salon</span>
+                    <h4 class="font-serif text-2xl md:text-3xl text-vintage-ink font-light leading-snug">
+                        Sculpting Autonomous Agents with Elegant Precision
+                    </h4>
+                    <p class="text-sm text-vintage-sepia/80 mt-2 leading-relaxed max-w-2xl">
+                        A hands-on, high-fidelity deep dive into building systems that remember, reason, and react with poetic intelligence.
+                    </p>
+                </div>
+
+                <!-- Schedule Item 3 -->
+                <div class="relative group">
+                    <!-- Dot marker -->
+                    <div class="absolute -left-[31px] md:-left-[47px] top-1 w-4 h-4 rounded-full bg-vintage-cream border-2 border-vintage-rose group-hover:bg-vintage-rose transition-colors duration-300"></div>
+
+                    <span class="font-serif italic text-lg text-vintage-gold block mb-2">02:30 PM — Afternoon Colloquium</span>
+                    <h4 class="font-serif text-2xl md:text-3xl text-vintage-ink font-light leading-snug">
+                        The Vintage Grid: Scale, Security, and Velvet Chains
+                    </h4>
+                    <p class="text-sm text-vintage-sepia/80 mt-2 leading-relaxed max-w-2xl">
+                        An aesthetic discussion with global thinkers on the boundaries, safeguards, and quiet power of next-generation artificial networks.
+                    </p>
+                </div>
+
+                <!-- Schedule Item 4 -->
+                <div class="relative group">
+                    <!-- Dot marker -->
+                    <div class="absolute -left-[31px] md:-left-[47px] top-1 w-4 h-4 rounded-full bg-vintage-cream border-2 border-vintage-rose group-hover:bg-vintage-rose transition-colors duration-300"></div>
+
+                    <span class="font-serif italic text-lg text-vintage-gold block mb-2">05:00 PM — Twilight Soirée</span>
+                    <h4 class="font-serif text-2xl md:text-3xl text-vintage-rose font-light leading-snug">
+                        Whiskey, Velvet, and the Soft Sound of Keyboards Clacking
+                    </h4>
+                    <p class="text-sm text-vintage-sepia/80 mt-2 leading-relaxed max-w-2xl">
+                        A cozy networking session where ideas flow as freely as wine. Raise a glass to the futures we are dreaming up together.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Bottom CTA / Invitation Block -->
+    <section class="py-24 md:py-32 bg-vintage-ink text-white relative overflow-hidden text-center border-t border-vintage-gold/25">
+        <!-- Subtle Vintage Grid/Grain Accent -->
+        <div class="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:40px_40px]"></div>
+
+        <div class="max-w-4xl mx-auto px-6 relative z-10">
+            <!-- Decorative Rose Core -->
+            <span class="font-serif italic text-vintage-gold text-lg md:text-xl block mb-4">"The world is beautiful, and so are you."</span>
+            <h2 class="font-serif text-4xl md:text-6xl font-light tracking-tight text-vintage-cream mb-6 leading-tight">
+                Don't Let the Golden Sun Set <br> Without Your Reservation
+            </h2>
+            <p class="text-neutral-400 text-sm md:text-base font-light max-w-lg mx-auto mb-12 tracking-wide leading-relaxed">
+                In-person seats are extremely limited to ensure an intimate atmosphere. Register now to claim your keepsake ticket and event program.
+            </p>
+
+            <a href="https://forms.gle/demo-link-or-mailto" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-12 py-5 text-xs uppercase tracking-[0.2em] font-semibold text-vintage-ink bg-vintage-cream hover:bg-vintage-gold transition-all duration-500">
+                Claim My Invitation
+                <svg class="w-4 h-4 ml-3 -mr-1 text-vintage-ink" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                </svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="mt-auto py-16 bg-vintage-cream border-t border-vintage-gold/20">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-8 text-xs text-vintage-sepia uppercase tracking-[0.2em] font-medium">
+            <div class="flex flex-col items-center md:items-start group">
+                <span class="font-serif italic text-lg text-vintage-ink normal-case tracking-normal group-hover:text-vintage-rose transition-colors duration-300">
+                    Build with AI 2025
+                </span>
+                <span class="text-[9px] text-vintage-rose mt-1">An Autumn-Winter Affair</span>
+            </div>
+
+            <div class="flex items-center space-x-6">
+                <a href="#about" class="hover:text-vintage-rose transition-colors duration-300">Vision</a>
+                <span>•</span>
+                <a href="#details" class="hover:text-vintage-rose transition-colors duration-300">Setting</a>
+                <span>•</span>
+                <a href="#schedule" class="hover:text-vintage-rose transition-colors duration-300">Hours</a>
+            </div>
+
+            <div>
+                <p class="text-[10px] text-center md:text-right text-vintage-gold/80">&copy; 2025 Build with AI. All lyrics and code are original.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
