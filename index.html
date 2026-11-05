@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Build with AI 2025 | Pixel Edition</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        pixel: ['"Press Start 2P"', 'monospace'],
+                        vt: ['"VT323"', 'monospace'],
+                    },
+                    colors: {
+                        pixel: {
+                            green: '#4A9F32',
+                            darkGreen: '#2E6C1B',
+                            oak: '#8B5A2B',
+                            plank: '#C68642',
+                            stone: '#5A5A5A',
+                            lightStone: '#8A8A8A',
+                            darkStone: '#313131,',
+                            coal: '#1E1E1E',
+                            cyan: '#3FC3E7',
+                            gold: '#FFAA00',
+                            redstone: '#DF3A25',
+                            cream: '#E9E2D0',
+                            dirt: '#573D26',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts: VT323 & Press Start 2P -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+    <style>
+        body {
+            image-rendering: pixelated;
+            image-rendering: crisp-edges;
+        }
+        /* Custom Pixel Grid background pattern */
+        .pixel-bg {
+            background-color: #E9E2D0;
+            background-image:
+                linear-gradient(to right, rgba(0, 0, 0, 0.04) 2px, transparent 2px),
+                linear-gradient(to bottom, rgba(0, 0, 0, 0.04) 2px, transparent 2px);
+            background-size: 16px 16px;
+        }
+        .pixel-dark-bg {
+            background-color: #2E2E2E;
+            background-image:
+                linear-gradient(to right, rgba(255, 255, 255, 0.03) 2px, transparent 2px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 2px, transparent 2px);
+            background-size: 16px 16px;
+        }
+        /* 3D block border effect */
+        .pixel-border {
+            border: 4px solid #1E1E1E;
+            box-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 1);
+        }
+        .pixel-border-sm {
+            border: 2px solid #1E1E1E;
+            box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 1);
+        }
+        .pixel-border-inset {
+            border: 4px solid #1E1E1E;
+            box-shadow: inset 4px 4px 0px 0px rgba(0, 0, 0, 0.2);
+        }
+        /* Interactive 3D buttons */
+        .pixel-btn {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border: 4px solid #000;
+            background-color: #FFAA00;
+            box-shadow: 4px 4px 0px 0px #000;
+            transition: all 0.1s ease;
+        }
+        .pixel-btn:hover {
+            background-color: #FFC43D;
+        }
+        .pixel-btn:active {
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0px 0px #000;
+        }
+        /* Custom rotating animation for Jukebox Disc */
+        @keyframes disc-spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .animate-disc-spin {
+            animation: disc-spin 3s linear infinite;
+        }
+    </style>
+</head>
+<body class="pixel-bg text-[#1E1E1E] min-h-screen flex flex-col font-vt text-lg overflow-x-hidden selection:bg-pixel-cyan selection:text-black">
+
+    <!-- Header Navigation -->
+    <header class="sticky top-0 z-50 bg-[#DFDFDF] border-b-4 border-black shadow-md">
+        <div class="max-w-6xl mx-auto px-4 py-3 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center space-x-3 group">
+                <!-- Pixel Art Cube Icon -->
+                <div class="w-10 h-10 bg-pixel-green pixel-border-sm flex flex-col relative shrink-0">
+                    <div class="w-full h-1/2 bg-[#70C050]"></div>
+                    <div class="absolute inset-1 border-2 border-white/40"></div>
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-pixel text-[11px] tracking-tight text-black group-hover:text-pixel-green transition-colors">
+                        BUILD WITH AI
+                    </span>
+                    <span class="font-pixel text-[7px] text-pixel-redstone mt-1">
+                        PIXEL EDITION 2025
+                    </span>
+                </div>
+            </a>
+
+            <!-- Center Navigation Links -->
+            <nav class="flex items-center space-x-6 text-[11px] font-pixel text-pixel-stone font-semibold">
+                <a href="#about" class="hover:text-black hover:underline">ABOUT</a>
+                <a href="#details" class="hover:text-black hover:underline">DETAILS</a>
+                <a href="#schedule" class="hover:text-black hover:underline">SCHEDULE</a>
+                <a href="#soundtrack" class="hover:text-black hover:underline">JUKEBOX</a>
+                <a href="#ticket-booth" class="hover:text-black hover:underline">PASSES</a>
+            </nav>
+
+            <!-- CTA Header Button -->
+            <div>
+                <a href="#ticket-booth" class="pixel-btn px-4 py-2 text-[9px] font-pixel text-black bg-pixel-cyan">
+                    REGISTER NOW
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero / World Intro Section -->
+    <section id="about" class="relative py-16 md:py-24 border-b-4 border-black">
+        <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
+            <!-- Retro Sparkles/Tags -->
+            <div class="inline-block bg-pixel-darkGreen text-white font-pixel text-[10px] px-3 py-1.5 mb-8 pixel-border-sm animate-bounce">
+                ★ ANNUAL DEVELOPER SUMMIT • NOV 15, 2025 ★
+            </div>
+
+            <!-- Blocky Epic Title -->
+            <h1 class="font-pixel text-3xl sm:text-5xl lg:text-6xl text-black mb-6 leading-tight select-none">
+                BUILD WITH AI <br>
+                <span class="text-pixel-gold drop-shadow-[4px_4px_0_rgba(0,0,0,1)]">2025</span>
+            </h1>
+
+            <!-- Description -->
+            <p class="font-vt text-2xl sm:text-3xl text-pixel-dirt font-bold max-w-3xl mx-auto mb-10 leading-relaxed px-2">
+                A premier gathering of developers, engineers, and creators shaping the future of artificial intelligence. Join us for hands-on technical workshops, engaging panels, and peer networking.
+            </p>
+
+            <!-- Metadata Row in retro inventory badges -->
+            <div class="flex flex-wrap items-center justify-center gap-4 text-[10px] font-pixel mb-10">
+                <div class="bg-[#DFDFDF] px-3 py-2.5 pixel-border-sm flex items-center space-x-2">
+                    <span class="w-3.5 h-3.5 bg-pixel-redstone border-2 border-black"></span>
+                    <span>NOV 15, 2025</span>
+                </div>
+                <div class="bg-[#DFDFDF] px-3 py-2.5 pixel-border-sm flex items-center space-x-2">
+                    <span class="w-3.5 h-3.5 bg-pixel-cyan border-2 border-black"></span>
+                    <span>NYC / ONLINE</span>
+                </div>
+                <div class="bg-[#DFDFDF] px-3 py-2.5 pixel-border-sm flex items-center space-x-2">
+                    <span class="w-3.5 h-3.5 bg-pixel-gold border-2 border-black"></span>
+                    <span>SEATS CAPPED</span>
+                </div>
+            </div>
+
+            <!-- Glowing Countdown Timer (Block styled) -->
+            <div class="max-w-md mx-auto bg-[#4C4C4C] text-[#DFDFDF] pixel-border p-6 mb-12">
+                <p class="font-pixel text-[9px] text-pixel-gold mb-4 uppercase tracking-wider">★ COUNTDOWN TO THE EVENT ★</p>
+                <div class="grid grid-cols-4 gap-2 text-center">
+                    <div class="bg-[#313131] p-2 border-2 border-black">
+                        <span id="countdown-days" class="font-pixel text-base sm:text-lg text-white block">00</span>
+                        <span class="text-[8px] font-pixel text-pixel-lightStone block mt-1">DAYS</span>
+                    </div>
+                    <div class="bg-[#313131] p-2 border-2 border-black">
+                        <span id="countdown-hours" class="font-pixel text-base sm:text-lg text-white block">00</span>
+                        <span class="text-[8px] font-pixel text-pixel-lightStone block mt-1">HOURS</span>
+                    </div>
+                    <div class="bg-[#313131] p-2 border-2 border-black">
+                        <span id="countdown-minutes" class="font-pixel text-base sm:text-lg text-white block">00</span>
+                        <span class="text-[8px] font-pixel text-pixel-lightStone block mt-1">MINS</span>
+                    </div>
+                    <div class="bg-[#313131] p-2 border-2 border-black">
+                        <span id="countdown-seconds" class="font-pixel text-base sm:text-lg text-pixel-cyan block">00</span>
+                        <span class="text-[8px] font-pixel text-pixel-lightStone block mt-1">SECS</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Interactive Blocky CTAs -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
+                <a href="#ticket-booth" class="pixel-btn w-full sm:w-auto px-8 py-4 text-xs font-pixel text-black bg-pixel-green hover:bg-[#5BC33E]">
+                    REGISTER NOW ➔
+                </a>
+                <a href="#details" class="pixel-btn w-full sm:w-auto px-8 py-4 text-xs font-pixel text-black bg-white">
+                    LEARN MORE
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Details/Adventure Info Section -->
+    <section id="details" class="py-16 md:py-20 bg-[#DFDFDF] border-b-4 border-black relative">
+        <div class="max-w-6xl mx-auto px-4">
+
+            <div class="text-center mb-16">
+                <span class="font-pixel text-[10px] text-pixel-redstone">EVENT INFO</span>
+                <h2 class="font-pixel text-xl sm:text-3xl text-black mt-2">EVENT DETAILS & SCHEDULE</h2>
+                <div class="w-24 h-2 bg-pixel-stone mx-auto mt-4"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Location Card -->
+                <div class="bg-white p-6 pixel-border flex flex-col justify-between hover:-translate-y-1 transition-transform">
+                    <div>
+                        <div class="font-pixel text-sm text-pixel-gold mb-4">DATE</div>
+                        <span class="font-pixel text-[9px] text-pixel-redstone block mb-2">WHEN</span>
+                        <h3 class="font-pixel text-[11px] text-black leading-normal">SATURDAY, NOV 15, 2025</h3>
+                    </div>
+                    <p class="font-vt text-xl text-pixel-dirt mt-6 leading-relaxed">
+                        Join our developer community this fall. A full day of collaborative programming, hands-on learning, and creative expression.
+                    </p>
+                </div>
+
+                <!-- Time Card -->
+                <div class="bg-white p-6 pixel-border flex flex-col justify-between hover:-translate-y-1 transition-transform">
+                    <div>
+                        <div class="font-pixel text-sm text-pixel-gold mb-4">TIME</div>
+                        <span class="font-pixel text-[9px] text-pixel-redstone block mb-2">HOURS</span>
+                        <h3 class="font-pixel text-[11px] text-black leading-normal">9:00 AM – 6:00 PM EST</h3>
+                    </div>
+                    <p class="font-vt text-xl text-pixel-dirt mt-6 leading-relaxed">
+                        From early morning registration to evening networking. Packed with speaker talks, interactive learning workshops, and friendly conversation.
+                    </p>
+                </div>
+
+                <!-- Venue Card -->
+                <div class="bg-white p-6 pixel-border flex flex-col justify-between hover:-translate-y-1 transition-transform">
+                    <div>
+                        <div class="font-pixel text-sm text-pixel-gold mb-4">LOCATION</div>
+                        <span class="font-pixel text-[9px] text-pixel-redstone block mb-2">WHERE</span>
+                        <h3 class="font-pixel text-[11px] text-black leading-normal">NEW YORK CITY & ONLINE</h3>
+                    </div>
+                    <p class="font-vt text-xl text-pixel-dirt mt-6 leading-relaxed">
+                        Hosted live at the Innovation Palace in New York City, and streamed online to registered attendees worldwide.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Section: Keepsake Badge/Pass Generator -->
+    <section id="ticket-booth" class="py-16 md:py-24 border-b-4 border-black relative">
+        <div class="max-w-5xl mx-auto px-4">
+
+            <div class="text-center mb-12">
+                <span class="font-pixel text-[10px] text-pixel-green">PASS GENERATOR</span>
+                <h2 class="font-pixel text-xl sm:text-3xl text-black mt-2">CREATE YOUR CUSTOM PASS</h2>
+                <div class="w-24 h-2 bg-pixel-green mx-auto mt-4"></div>
+                <p class="font-vt text-2xl text-pixel-dirt max-w-xl mx-auto mt-4 font-bold">
+                    Choose your role and enter your name to generate and download a custom 8-bit collector's pass.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                <!-- Form inputs block -->
+                <div class="lg:col-span-5 bg-[#DFDFDF] p-6 pixel-border">
+                    <h3 class="font-pixel text-[11px] text-black mb-6">★ ATTENDEE FORM ★</h3>
+
+                    <div class="mb-5">
+                        <label for="ticket-name" class="block font-pixel text-[8px] text-pixel-stone mb-2">YOUR NAME</label>
+                        <input type="text" id="ticket-name" value="Lana Del Dev" placeholder="E.g. Lana Del Dev" class="w-full px-3 py-2 bg-white border-4 border-black text-sm font-pixel focus:outline-none focus:bg-pixel-cream text-black" oninput="updateLiveTicket()">
+                    </div>
+
+                    <div class="mb-6">
+                        <label for="ticket-path" class="block font-pixel text-[8px] text-pixel-stone mb-2">YOUR ROLE</label>
+                        <select id="ticket-path" class="w-full px-3 py-2 bg-white border-4 border-black text-xs font-pixel focus:outline-none text-black" onchange="updateLiveTicket()">
+                            <option value="ARCHITECT">DEVELOPER</option>
+                            <option value="MUSE">DESIGNER</option>
+                            <option value="DREAMER">RESEARCHER</option>
+                            <option value="ALCHEMIST">PRODUCT MANAGER</option>
+                        </select>
+                    </div>
+
+                    <button onclick="downloadTicket()" class="pixel-btn w-full py-3.5 text-[9px] font-pixel text-black bg-pixel-gold">
+                        DOWNLOAD DIGITAL PASS
+                    </button>
+                </div>
+
+                <!-- Live Preview Block -->
+                <div class="lg:col-span-7 flex flex-col items-center">
+                    <p class="font-pixel text-[8px] text-pixel-stone mb-3">★ PASS PREVIEW ★</p>
+
+                    <!-- HTML Element Preview designed like a Minecraft item frame / collectible item -->
+                    <div id="live-ticket" class="w-full max-w-[500px] bg-[#313131] border-4 border-[#1E1E1E] text-white p-6 relative shadow-lg flex flex-col justify-between min-h-[260px]">
+                        <!-- Decorative Corners -->
+                        <div class="absolute top-1 left-1 w-2 h-2 bg-pixel-cyan"></div>
+                        <div class="absolute top-1 right-1 w-2 h-2 bg-pixel-cyan"></div>
+                        <div class="absolute bottom-1 left-1 w-2 h-2 bg-pixel-cyan"></div>
+                        <div class="absolute bottom-1 right-1 w-2 h-2 bg-pixel-cyan"></div>
+
+                        <div class="flex items-start justify-between">
+                            <div class="flex flex-col">
+                                <span class="font-pixel text-[11px] text-pixel-gold tracking-wider">BUILD WITH AI</span>
+                                <span class="font-pixel text-[7px] text-pixel-lightStone mt-1.5">PIXEL SUMMIT 2025</span>
+                            </div>
+                            <span class="font-pixel text-[7px] bg-pixel-redstone text-white px-2 py-1 pixel-border-sm">STUB</span>
+                        </div>
+
+                        <!-- Main stats/badge specs in inventory mode -->
+                        <div class="my-6 border-l-4 border-pixel-cyan pl-4 flex items-center space-x-4">
+                            <!-- Live changing item icon -->
+                            <div id="badge-item-icon" class="w-14 h-14 bg-[#4C4C4C] pixel-border-sm flex items-center justify-center shrink-0">
+                                <!-- Redstone torch icon -->
+                                <div id="icon-art" class="w-8 h-8 relative"></div>
+                            </div>
+                            <div class="overflow-hidden">
+                                <span class="font-pixel text-[6px] text-pixel-lightStone block uppercase">YOUR NAME</span>
+                                <h4 id="ticket-preview-name" class="font-pixel text-[12px] text-white truncate uppercase tracking-tight">LANA DEL DEV</h4>
+                                <span id="ticket-preview-path" class="font-pixel text-[8px] text-pixel-cyan block mt-1">ROLE: DEVELOPER</span>
+                            </div>
+                        </div>
+
+                        <!-- Footer stats -->
+                        <div class="flex justify-between items-end font-pixel text-[7px] text-pixel-lightStone pt-2 border-t-2 border-[#4C4C4C]">
+                            <div>
+                                <p>LOCATION: NYC & ONLINE</p>
+                                <p class="mt-1">TIME: 09:00 AM EST</p>
+                            </div>
+                            <div class="text-right">
+                                <p id="ticket-preview-stub-no">ID: 2025-4512</p>
+                                <p class="mt-1 text-pixel-gold">ATTENDEE PASS</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW SECTION: Procedural 8-Bit Retro Jukebox -->
+    <section id="soundtrack" class="py-16 md:py-20 bg-[#DFDFDF] border-b-4 border-black relative">
+        <div class="max-w-4xl mx-auto px-4">
+
+            <div class="text-center mb-12">
+                <span class="font-pixel text-[10px] text-pixel-gold">8-BIT MUSIC</span>
+                <h2 class="font-pixel text-xl sm:text-3xl text-black mt-2">RETRO JUKEBOX</h2>
+                <div class="w-24 h-2 bg-pixel-stone mx-auto mt-4"></div>
+                <p class="font-vt text-2xl text-pixel-dirt max-w-xl mx-auto mt-4 font-bold">
+                    Click the button below to play nostalgic, upbeat 8-bit retro music right in your browser.
+                </p>
+            </div>
+
+            <!-- Blocky Jukebox Console -->
+            <div class="max-w-md mx-auto bg-[#4C4C4C] border-4 border-black p-6 shadow-2xl text-[#DFDFDF] relative">
+                <!-- Branding Header -->
+                <div class="flex justify-between items-center mb-6">
+                    <div>
+                        <span class="font-pixel text-[7px] text-pixel-gold block">8-BIT PLAYER</span>
+                        <span class="font-pixel text-[10px] text-white">MUSIC PLAYER</span>
+                    </div>
+                    <div class="flex space-x-1">
+                        <span class="w-2.5 h-2.5 bg-pixel-redstone border-2 border-black animate-ping" id="vinyl-indicator" style="display: none; animation-duration: 1.5s;"></span>
+                        <span class="font-pixel text-[7px] text-pixel-lightStone">LIVE SYNTH</span>
+                    </div>
+                </div>
+
+                <!-- Disc Slot & Rotating Disc Visual -->
+                <div class="relative w-56 h-56 mx-auto mb-6 bg-[#313131] border-4 border-black flex items-center justify-center overflow-hidden">
+                    <!-- Spinning Jukebox Disc Graphic (Minecrafty blocky vinyl disc) -->
+                    <div id="vinyl-record" class="w-40 h-40 bg-black border-4 border-[#1E1E1E] flex items-center justify-center relative">
+                        <!-- Pixel segments -->
+                        <div class="absolute inset-2 border-2 border-[#333] opacity-50"></div>
+                        <div class="absolute inset-5 border-2 border-[#222] opacity-50"></div>
+
+                        <!-- Block center label -->
+                        <div class="w-16 h-16 bg-pixel-gold border-4 border-black flex items-center justify-center p-1 text-center">
+                            <span class="font-pixel text-[7px] text-black font-bold">C-18</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Deck Control Switch -->
+                <div class="flex flex-col items-center">
+                    <button id="synth-play-btn" onclick="toggleSynthSoundtrack()" class="pixel-btn w-full py-4 text-[9px] font-pixel text-black bg-pixel-cyan">
+                        <span>PLAY RETRO MUSIC</span>
+                    </button>
+                    <p class="font-pixel text-[6px] text-pixel-lightStone mt-4 text-center">
+                        GENERATES REAL-TIME 8-BIT CHIPTUNES
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Quests / Event Schedule -->
+    <section id="schedule" class="py-16 md:py-20 border-b-4 border-black">
+        <div class="max-w-4xl mx-auto px-4">
+
+            <div class="text-center mb-16">
+                <span class="font-pixel text-[10px] text-pixel-redstone">AGENDA</span>
+                <h2 class="font-pixel text-xl sm:text-3xl text-black mt-2">EVENT SCHEDULE</h2>
+                <div class="w-24 h-2 bg-pixel-stone mx-auto mt-4"></div>
+            </div>
+
+            <!-- Timeline designed like a retro quest scroll or adventure progression -->
+            <div class="relative pl-8 border-l-4 border-pixel-stone space-y-12">
+
+                <!-- Timeline dot overlays -->
+                <div class="absolute left-0 top-0 h-full w-[2px] bg-pixel-stone"></div>
+
+                <!-- Quest Item 1 -->
+                <div class="relative group">
+                    <div class="absolute -left-[45px] top-1.5 w-6 h-6 bg-pixel-cream border-4 border-pixel-redstone group-hover:bg-pixel-redstone transition-colors duration-300"></div>
+
+                    <span class="font-pixel text-[10px] text-pixel-gold block mb-2">★ SESSION 1 — 09:00 AM EST</span>
+                    <h4 class="font-pixel text-[11px] sm:text-sm text-black leading-snug">
+                        INTRODUCTION TO ARTIFICIAL INTELLIGENCE
+                    </h4>
+                    <p class="font-vt text-xl text-pixel-dirt mt-2 leading-relaxed max-w-2xl font-bold">
+                        Learn how modern AI models work, retrieve information, and process data in real time.
+                    </p>
+                </div>
+
+                <!-- Quest Item 2 -->
+                <div class="relative group">
+                    <div class="absolute -left-[45px] top-1.5 w-6 h-6 bg-pixel-cream border-4 border-pixel-cyan group-hover:bg-pixel-cyan transition-colors duration-300"></div>
+
+                    <span class="font-pixel text-[10px] text-pixel-gold block mb-2">★ SESSION 2 — 11:00 AM EST</span>
+                    <h4 class="font-pixel text-[11px] sm:text-sm text-black leading-snug">
+                        BUILDING INTELLIGENT AGENT WORKFLOWS
+                    </h4>
+                    <p class="font-vt text-xl text-pixel-dirt mt-2 leading-relaxed max-w-2xl font-bold">
+                        A structured session about designing multi-agent systems using advanced logical workflows and response evaluation.
+                    </p>
+                </div>
+
+                <!-- Quest Item 3 -->
+                <div class="relative group">
+                    <div class="absolute -left-[45px] top-1.5 w-6 h-6 bg-pixel-cream border-4 border-pixel-green group-hover:bg-pixel-green transition-colors duration-300"></div>
+
+                    <span class="font-pixel text-[10px] text-pixel-gold block mb-2">★ SESSION 3 — 02:30 PM EST</span>
+                    <h4 class="font-pixel text-[11px] sm:text-sm text-black leading-snug">
+                        SCALING REAL-TIME SYSTEMS
+                    </h4>
+                    <p class="font-vt text-xl text-pixel-dirt mt-2 leading-relaxed max-w-2xl font-bold">
+                        Learn to architect secure state models and distributed databases for high-traffic, real-time applications.
+                    </p>
+                </div>
+
+                <!-- Quest Item 4 -->
+                <div class="relative group">
+                    <div class="absolute -left-[45px] top-1.5 w-6 h-6 bg-pixel-cream border-4 border-pixel-gold group-hover:bg-pixel-gold transition-colors duration-300"></div>
+
+                    <span class="font-pixel text-[10px] text-pixel-redstone block mb-2">★ SESSION 4 — 05:00 PM EST</span>
+                    <h4 class="font-pixel text-[11px] sm:text-sm text-black leading-snug">
+                        NETWORKING & SOCIAL HOUR
+                    </h4>
+                    <p class="font-vt text-xl text-pixel-dirt mt-2 leading-relaxed max-w-2xl font-bold">
+                        A relaxed social session where developers can connect, share engineering projects, and enjoy the retro music player.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Bottom CTA block (Blocky Campfire Theme) -->
+    <section class="py-20 md:py-24 bg-pixel-coal text-white relative text-center border-t-4 border-black">
+        <div class="max-w-4xl mx-auto px-4 relative z-10">
+            <!-- Retro title -->
+            <span class="font-pixel text-[8px] text-pixel-gold block mb-4">"JOIN US TODAY"</span>
+            <h2 class="font-pixel text-xl sm:text-3xl text-white mb-6 leading-tight">
+                RESERVE YOUR SEAT <br> BEFORE SLOTS FILL UP
+            </h2>
+            <p class="font-vt text-2xl text-pixel-cream max-w-lg mx-auto mb-12 font-bold leading-relaxed">
+                In-person attendance is strictly capped at 256 seats. Register today to reserve your ticket.
+            </p>
+
+            <a href="#ticket-booth" class="pixel-btn px-8 py-5 text-xs font-pixel text-black bg-pixel-gold">
+                REGISTER NOW ➔
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="mt-auto py-12 bg-[#DFDFDF] border-t-4 border-black text-center">
+        <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-6 font-pixel text-[8px] text-pixel-stone font-semibold">
+            <div class="flex flex-col items-center md:items-start">
+                <span class="text-black text-[10px] mb-1">BUILD WITH AI 2025</span>
+                <span class="text-pixel-redstone">NYC & ONLINE - BUILD WITH AI 2025</span>
+            </div>
+
+            <div class="flex items-center space-x-4">
+                <a href="#about" class="hover:underline">ABOUT</a>
+                <span>•</span>
+                <a href="#details" class="hover:underline">DETAILS</a>
+                <span>•</span>
+                <a href="#schedule" class="hover:underline">SCHEDULE</a>
+            </div>
+
+            <div>
+                <p>&copy; 2025 BUILD WITH AI. ALL RIGHTS RESERVED.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        /* 1. Countdown Timer */
+        const targetDate = new Date('November 15, 2025 09:00:00 EST').getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const difference = targetDate - now;
+
+            if (difference < 0) {
+                document.getElementById('countdown-days').innerText = "00";
+                document.getElementById('countdown-hours').innerText = "00";
+                document.getElementById('countdown-minutes').innerText = "00";
+                document.getElementById('countdown-seconds').innerText = "00";
+                return;
+            }
+
+            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+            document.getElementById('countdown-days').innerText = String(days).padStart(2, '0');
+            document.getElementById('countdown-hours').innerText = String(hours).padStart(2, '0');
+            document.getElementById('countdown-minutes').innerText = String(minutes).padStart(2, '0');
+            document.getElementById('countdown-seconds').innerText = String(seconds).padStart(2, '0');
+        }
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        /* 2. Keepsake Badge Generator */
+        // Pixel Art Item Art Definitions depending on active class
+        const pixelArts = {
+            'ARCHITECT': [
+                [0,0,1,1,1,0,0,0],
+                [0,1,1,0,1,1,0,0],
+                [1,1,0,0,0,1,1,0],
+                [1,0,0,0,0,0,1,1],
+                [1,1,0,0,0,1,1,0],
+                [0,1,1,0,1,1,0,0],
+                [0,0,1,1,1,0,0,0],
+                [0,0,0,0,0,0,0,0]
+            ], // Gears / Redstone Dust
+            'MUSE': [
+                [0,1,1,1,1,1,1,0],
+                [1,1,0,0,0,0,1,1],
+                [1,0,1,1,1,1,0,1],
+                [1,0,1,0,0,1,0,1],
+                [1,0,1,0,0,1,0,1],
+                [1,0,1,1,1,1,0,1],
+                [1,1,0,0,0,0,1,1],
+                [0,1,1,1,1,1,1,0]
+            ], // Retro Note-Block Disc
+            'DREAMER': [
+                [0,0,0,1,1,0,0,0],
+                [0,0,1,1,1,1,0,0],
+                [0,1,1,0,0,1,1,0],
+                [1,1,0,0,0,0,1,1],
+                [1,1,0,0,0,0,1,1],
+                [0,1,1,0,0,1,1,0],
+                [0,0,1,1,1,1,0,0],
+                [0,0,0,1,1,0,0,0]
+            ], // Ender Eye / Beacon Star
+            'ALCHEMIST': [
+                [0,0,0,1,1,0,0,0],
+                [0,0,0,1,1,0,0,0],
+                [0,0,1,1,1,1,0,0],
+                [0,1,1,0,0,1,1,0],
+                [1,1,0,1,1,0,1,1],
+                [1,1,1,1,1,1,1,1],
+                [1,1,1,1,1,1,1,1],
+                [0,1,1,1,1,1,1,0]
+            ] // Potion Bottle
+        };
+
+        const itemColors = {
+            'ARCHITECT': '#DF3A25', // Redstone Red
+            'MUSE': '#3FC3E7',      // Noteblock Cyan
+            'DREAMER': '#FFAA00',   // Beacon Gold
+            'ALCHEMIST': '#D83AE6'  // Potion Purple
+        };
+
+        function drawPixelArtIcon(containerId, classType) {
+            const container = document.getElementById(containerId);
+            container.innerHTML = '';
+            const grid = pixelArts[classType] || pixelArts['ARCHITECT'];
+            const color = itemColors[classType] || itemColors['ARCHITECT'];
+
+            // Construct simple raw pixel table inside preview container
+            const gridWrapper = document.createElement('div');
+            gridWrapper.className = "grid grid-cols-8 gap-[1px] w-8 h-8";
+
+            for (let r = 0; r < 8; r++) {
+                for (let c = 0; c < 8; c++) {
+                    const pixel = document.createElement('div');
+                    pixel.style.backgroundColor = grid[r][c] === 1 ? color : 'transparent';
+                    pixel.className = "w-full h-full";
+                    gridWrapper.appendChild(pixel);
+                }
+            }
+            container.appendChild(gridWrapper);
+        }
+
+        function updateLiveTicket() {
+            const inputName = document.getElementById('ticket-name').value;
+            const pathValue = document.getElementById('ticket-path').value;
+
+            // Map keys to simple english labels
+            const roleLabels = {
+                'ARCHITECT': 'DEVELOPER',
+                'MUSE': 'DESIGNER',
+                'DREAMER': 'RESEARCHER',
+                'ALCHEMIST': 'PRODUCT MANAGER'
+            };
+            const activeRole = roleLabels[pathValue] || 'DEVELOPER';
+
+            document.getElementById('ticket-preview-name').innerText = (inputName || 'YOUR NAME').toUpperCase();
+            document.getElementById('ticket-preview-path').innerText = 'ROLE: ' + activeRole;
+
+            drawPixelArtIcon('icon-art', pathValue);
+        }
+
+        // Random ticket stub number
+        document.getElementById('ticket-preview-stub-no').innerText = 'ID: 2025-' + Math.floor(1000 + Math.random() * 9000);
+        updateLiveTicket();
+
+        function downloadTicket() {
+            const canvas = document.createElement('canvas');
+            canvas.width = 600;
+            canvas.height = 300;
+            const ctx = canvas.getContext('2d');
+
+            // Draw clean dark-grey base (Minecraft style)
+            ctx.fillStyle = '#313131';
+            ctx.fillRect(0, 0, 600, 300);
+
+            // Outer thick black borders
+            ctx.strokeStyle = '#000000';
+            ctx.lineWidth = 8;
+            ctx.strokeRect(4, 4, 592, 292);
+
+            // Inner light grey highlighting frame
+            ctx.strokeStyle = '#8A8A8A';
+            ctx.lineWidth = 4;
+            ctx.strokeRect(10, 10, 580, 280);
+
+            // Draw pixel-art corner decorations
+            ctx.fillStyle = '#3FC3E7';
+            ctx.fillRect(16, 16, 12, 12);
+            ctx.fillRect(572, 16, 12, 12);
+            ctx.fillRect(16, 272, 12, 12);
+            ctx.fillRect(572, 272, 12, 12);
+
+            // Dividers
+            ctx.strokeStyle = '#1E1E1E';
+            ctx.lineWidth = 4;
+            ctx.beginPath();
+            ctx.moveTo(440, 10);
+            ctx.lineTo(440, 290);
+            ctx.stroke();
+
+            // Text Rendering
+            ctx.fillStyle = '#FFAA00'; // Gold accent
+            ctx.font = '20px monospace';
+            ctx.fillText('BUILD WITH AI 2025', 40, 50);
+
+            ctx.fillStyle = '#8A8A8A';
+            ctx.font = '11px monospace';
+            ctx.fillText('BUILD WITH AI ATTENDEE PASS', 40, 75);
+
+            // User name tag
+            const name = (document.getElementById('ticket-name').value || 'YOUR NAME').toUpperCase();
+            ctx.fillStyle = '#FFFFFF';
+            ctx.font = 'bold 26px monospace';
+            ctx.fillText(name, 40, 140);
+
+            // Role/Class Selection
+            const pathValue = document.getElementById('ticket-path').value;
+            const roleLabels = {
+                'ARCHITECT': 'DEVELOPER',
+                'MUSE': 'DESIGNER',
+                'DREAMER': 'RESEARCHER',
+                'ALCHEMIST': 'PRODUCT MANAGER'
+            };
+            const roleName = roleLabels[pathValue] || 'DEVELOPER';
+
+            ctx.fillStyle = '#3FC3E7'; // Cyan Accent
+            ctx.font = 'bold 15px monospace';
+            ctx.fillText('ROLE: ' + roleName, 40, 175);
+
+            // Coordinates details
+            ctx.fillStyle = '#8A8A8A';
+            ctx.font = '12px monospace';
+            ctx.fillText('LOCATION: NYC & ONLINE', 40, 225);
+            ctx.fillText('DATE: SATURDAY, NOV 15, 2025', 40, 245);
+            ctx.fillText('TIME: 09:00 AM EST • NYC & ONLINE', 40, 265);
+
+            // Draw custom Pixel Art inside downloaded canvas
+            const grid = pixelArts[pathValue] || pixelArts['ARCHITECT'];
+            const color = itemColors[pathValue] || itemColors['ARCHITECT'];
+            const pixelSize = 5;
+            const startX = 350;
+            const startY = 110;
+
+            for (let r = 0; r < 8; r++) {
+                for (let c = 0; c < 8; c++) {
+                    if (grid[r][c] === 1) {
+                        ctx.fillStyle = color;
+                        ctx.fillRect(startX + (c * pixelSize), startY + (r * pixelSize), pixelSize, pixelSize);
+                    }
+                }
+            }
+
+            // Stub info section
+            const stubId = document.getElementById('ticket-preview-stub-no').innerText;
+            ctx.fillStyle = '#DF3A25'; // Redstone Red
+            ctx.font = 'bold 16px monospace';
+            ctx.fillText('STUB', 460, 50);
+
+            ctx.fillStyle = '#FFFFFF';
+            ctx.font = '11px monospace';
+            ctx.fillText(stubId, 460, 100);
+            ctx.fillText('ATTENDEE', 460, 130);
+            ctx.fillText('ADMIT ONE', 460, 160);
+
+            // Simple block barcode on stub
+            ctx.fillStyle = '#000000';
+            for (let i = 0; i < 18; i++) {
+                const barWidth = (i % 3 === 0) ? 6 : 2;
+                ctx.fillRect(460 + (i * 6), 200, barWidth, 40);
+            }
+
+            // Trigger file download
+            const link = document.createElement('a');
+            link.download = `BWA2025_Collector_Pass_${name.replace(/\s+/g, '_')}.png`;
+            link.href = canvas.toDataURL();
+            link.click();
+        }
+
+        /* 3. Real-time Chiptune Synthesizer soundtrack */
+        let audioCtx = null;
+        let playInterval = null;
+        let isPlaying = false;
+
+        // Custom energetic chiptune melody notes (frequencies)
+        // A classic retro upbeat melody
+        const melodyNotes = [
+            261.63, 293.66, 329.63, 392.00, 440.00, 392.00, 329.63, 261.63,
+            293.66, 293.66, 349.23, 440.00, 523.25, 440.00, 349.23, 293.66
+        ];
+
+        function toggleSynthSoundtrack() {
+            if (isPlaying) {
+                stopChiptuneSoundtrack();
+            } else {
+                startChiptuneSoundtrack();
+            }
+        }
+
+        function startChiptuneSoundtrack() {
+            try {
+                const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+                audioCtx = new AudioContextClass();
+                isPlaying = true;
+
+                let step = 0;
+
+                // Play upbeat retro chiptune arpeggios
+                playInterval = setInterval(() => {
+                    if (!isPlaying) return;
+
+                    const osc = audioCtx.createOscillator();
+                    const gainNode = audioCtx.createGain();
+
+                    // Square wave gives that crisp classic NES/Roblox chiptune vibe!
+                    osc.type = 'square';
+
+                    // Cycle through retro melody
+                    const freq = melodyNotes[step % melodyNotes.length];
+                    osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+
+                    // Add dynamic chiptune decay envelope
+                    gainNode.gain.setValueAtTime(0.08, audioCtx.currentTime);
+                    gainNode.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 0.18);
+
+                    osc.connect(gainNode);
+                    gainNode.connect(audioCtx.destination);
+
+                    osc.start();
+                    osc.stop(audioCtx.currentTime + 0.2);
+
+                    // Add subtle retro percussion hit (noise snap) every 4th step
+                    if (step % 4 === 0) {
+                        const snareOsc = audioCtx.createOscillator();
+                        const snareGain = audioCtx.createGain();
+                        snareOsc.type = 'triangle';
+                        snareOsc.frequency.setValueAtTime(150, audioCtx.currentTime);
+                        snareOsc.frequency.exponentialRampToValueAtTime(40, audioCtx.currentTime + 0.1);
+
+                        snareGain.gain.setValueAtTime(0.12, audioCtx.currentTime);
+                        snareGain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 0.1);
+
+                        snareOsc.connect(snareGain);
+                        snareGain.connect(audioCtx.destination);
+                        snareOsc.start();
+                        snareOsc.stop(audioCtx.currentTime + 0.15);
+                    }
+
+                    step++;
+                }, 200);
+
+                // Update UI state
+                document.getElementById('vinyl-record').classList.add('animate-disc-spin');
+                document.getElementById('vinyl-indicator').style.display = 'block';
+                document.getElementById('synth-play-btn').innerText = 'STOP MUSIC';
+                document.getElementById('synth-play-btn').classList.remove('bg-pixel-cyan');
+                document.getElementById('synth-play-btn').classList.add('bg-pixel-redstone', 'text-white');
+            } catch(e) {
+                console.error("Failed to start audio synthesizer: ", e);
+            }
+        }
+
+        function stopChiptuneSoundtrack() {
+            isPlaying = false;
+            if (playInterval) {
+                clearInterval(playInterval);
+                playInterval = null;
+            }
+            if (audioCtx) {
+                audioCtx.close();
+                audioCtx = null;
+            }
+
+            // Reset UI state
+            document.getElementById('vinyl-record').classList.remove('animate-disc-spin');
+            document.getElementById('vinyl-indicator').style.display = 'none';
+            document.getElementById('synth-play-btn').innerText = 'PLAY RETRO MUSIC';
+            document.getElementById('synth-play-btn').classList.add('bg-pixel-cyan');
+            document.getElementById('synth-play-btn').classList.remove('bg-pixel-redstone', 'text-white');
+        }
+    </script>
+</body>
+</html>
